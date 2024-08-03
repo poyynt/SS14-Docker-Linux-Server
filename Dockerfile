@@ -6,11 +6,11 @@ RUN apt-get -y update && \
     apt-get -y install curl unzip wget git
 
 # Download and extract SS14 server
-ADD https://cdn.centcomm.spacestation14.com/builds/wizards/builds/70246ae10eff287ca83193cce73b79e7424c7e4a/SS14.Server_linux-x64.zip SS14.Server_linux-x64.zip
+ADD https://wizards.cdn.spacestation14.com/fork/wizards/version/64273cb914047a819cc6be35d03ab8f9e2d89723/file/SS14.Server_linux-x64.zip SS14.Server_linux-x64.zip
 RUN unzip SS14.Server_linux-x64.zip -d /ss14-default/
 
 # Download and build Watchdog
-RUN wget https://github.com/space-wizards/SS14.Watchdog/archive/d0a68202284e837e987d38b3e99f15a6a53f2a0b.zip -O Watchdog.zip && \
+RUN wget https://github.com/space-wizards/SS14.Watchdog/archive/a42870bb0a62a0a602e023dc8ada94c0a6565dbf.zip -O Watchdog.zip && \
     unzip Watchdog.zip -d Watchdog && \
     cd Watchdog/SS14* && \
     dotnet publish -c Release -r linux-x64 --no-self-contained && \
