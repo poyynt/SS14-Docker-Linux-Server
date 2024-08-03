@@ -14,7 +14,7 @@ RUN wget https://github.com/space-wizards/SS14.Watchdog/archive/a42870bb0a62a0a6
     unzip Watchdog.zip -d Watchdog && \
     cd Watchdog/SS14* && \
     dotnet publish -c Release -r linux-x64 --no-self-contained && \
-    cp -r SS14.Watchdog/bin/Release/net7.0/linux-x64/publish /ss14-default
+    cp -r SS14.Watchdog/bin/Release/net8.0/linux-x64/publish /ss14-default
 
 # Server stage
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS server
